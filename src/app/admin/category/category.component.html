@@ -1,0 +1,22 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Categoria {{categoryItem.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{categoryItem.description}}</p>
+  </div>
+</ng-template>
+<div class="card text-center category-card" (click)="goInfo(content)">
+  <div class="text-center">
+    <img class="card-img"
+         [src]="categoryItem.icon"
+         alt="Plata" width="50px">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{categoryItem.name}}</h5>
+    <p class="card-text">Total: {{categoryItem.total}}</p>
+  </div>
+</div>

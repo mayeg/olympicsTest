@@ -1,0 +1,16 @@
+<ngb-tabset #t="ngbTabset">
+  <ngb-tab id="tab-selectbyid1" title="Listado">
+    <ng-template ngbTabContent>
+      <app-list-admin *ngIf="!loading" [winners]="winners"></app-list-admin>
+      <app-loading *ngIf="loading" message="cargando información"></app-loading>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-selectbyid2">
+    <ng-template ngbTabTitle>Categorias</ng-template>
+    <ng-template ngbTabContent>
+      <div class="row category-section">
+        <app-category *ngFor="let categoryItem of categoryItems" [categoryItem]="categoryItem" class="col-md-4"></app-category>
+      </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

@@ -1,0 +1,47 @@
+<div class="fill">
+  <div class="container h-100">
+    <div class="row justify-content-md-center h-100">
+      <div class="card-wrapper">
+        <div class="brand text-center logo">
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <img
+              src="/assets/images/logo.png"
+              alt="logo" class="logo-img">
+            <h4 class="card-title text-center">Login</h4>
+            <form [formGroup]="loginForm" class="my-login-validation" novalidate="">
+              <div class="margin-label">
+                <label for="inputUser" class="sr-only">Username</label>
+                <input type="text" id="inputUser" class="form-control" placeholder="Username" autofocus
+                       formControlName="username">
+                <div *ngIf="loginForm.get('username').errors" class="invalid-feedback">
+                  Este campo es requerido
+                </div>
+              </div>
+
+              <div class="margin-label">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                       formControlName="password">
+                <div *ngIf="loginForm.get('password').errors" class="invalid-feedback">
+                  Debe ingresar la contraseña
+                </div>
+              </div>
+              <div class="margin-label m-0">
+                <button type="submit" class="btn btn-primary btn-block" (click)="login()">
+                  Login
+                </button>
+              </div>
+              <p *ngIf="!isValid">
+                <ngb-alert [dismissible]="false" type="danger">
+                  Usuario o contraseña invalida.
+                </ngb-alert>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
