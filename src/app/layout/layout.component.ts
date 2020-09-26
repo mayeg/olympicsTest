@@ -15,6 +15,7 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authService.getUser();
+    this.authService.redirectHomeUser();
   }
 
   logout(): void {
